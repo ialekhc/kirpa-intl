@@ -1,7 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
 import { Metadata } from 'next';
-import { ShieldCheck, Target, Eye, CheckCircle2, ArrowRight } from 'lucide-react';
+import { ShieldCheck, Target, Eye, CheckCircle2, ArrowRight, Mail } from 'lucide-react';
 import { company } from '@/data/company';
 import { Container } from '@/components/ui/Container';
 import { SectionHeader } from '@/components/ui/SectionHeader';
@@ -178,13 +178,18 @@ export default function AboutPage() {
               {company.europeanPartner.description}
             </p>
 
-            <div className="flex flex-wrap justify-center gap-4 pt-4">
-              <Button href="/countries" variant="primary">
-                Explore Partner Destinations
+            <div className="flex flex-col justify-center gap-3 pt-4 sm:flex-row">
+              <Button href="/countries" variant="primary" className="w-full sm:w-auto">
+                View Jobs by Country
                 <ArrowRight className="w-4 h-4" />
               </Button>
-              <Button href="/contact" variant="outline" className="text-white border-white/30 hover:bg-white/10">
-                Contact KIRPA Office
+              <Button
+                href="/contact"
+                variant="inverse"
+                className="w-full sm:w-auto"
+              >
+                <Mail className="w-4 h-4" />
+                Contact Our Recruitment Team
               </Button>
             </div>
           </div>
