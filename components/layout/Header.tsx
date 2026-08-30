@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useCallback, useState } from 'react';
 import Link from 'next/link';
 import { Menu } from 'lucide-react';
 import { mainNavigation } from '@/data/navigation';
@@ -10,11 +10,13 @@ import { Logo } from '@/components/ui/Logo';
 
 export function Header() {
   const [mobileNavOpen, setMobileNavOpen] = useState(false);
+  const closeMobileNav = useCallback(() => setMobileNavOpen(false), []);
 
   return (
-    <header className="sticky top-0 z-40 bg-white/95 backdrop-blur-xs border-b border-[#E2E8F0] shadow-2xs">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex h-18 min-w-0 items-center justify-between gap-3 sm:h-20">
+    <>
+      <header className="sticky top-0 z-40 bg-white/95 backdrop-blur-xs border-b border-[#E2E8F0] shadow-2xs">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex h-18 min-w-0 items-center justify-between gap-3 sm:h-20">
           {/* Official Logo Component */}
           <Logo size="sm" className="min-w-0" />
 
@@ -48,11 +50,12 @@ export function Header() {
           >
             <Menu className="w-6 h-6" />
           </button>
+          </div>
         </div>
-      </div>
+      </header>
 
       {/* Mobile Drawer */}
-      <MobileNav isOpen={mobileNavOpen} onClose={() => setMobileNavOpen(false)} />
-    </header>
+      <MobileNav isOpen={mobileNavOpen} onClose={closeMobileNav} />
+    </>
   );
 }
