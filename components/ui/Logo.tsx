@@ -32,7 +32,7 @@ export function Logo({
   };
 
   const logoContent = (
-    <span className={cn('inline-flex items-center gap-3 select-none', className)}>
+    <span className={cn('inline-flex min-w-0 items-center gap-2.5 select-none sm:gap-3', className)}>
       <Image
         src="/kripa-intl.svg"
         alt=""
@@ -46,7 +46,7 @@ export function Logo({
         <span className="flex min-w-0 flex-col leading-none">
           <span
             className={cn(
-              'font-black tracking-tight',
+              'truncate font-black tracking-tight',
               nameClasses[size],
               variant === 'light' ? 'text-white' : 'text-[#123B63]'
             )}

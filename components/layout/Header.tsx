@@ -14,9 +14,9 @@ export function Header() {
   return (
     <header className="sticky top-0 z-40 bg-white/95 backdrop-blur-xs border-b border-[#E2E8F0] shadow-2xs">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-18 sm:h-20">
+        <div className="flex h-18 min-w-0 items-center justify-between gap-3 sm:h-20">
           {/* Official Logo Component */}
-          <Logo />
+          <Logo size="sm" className="min-w-0" />
 
           {/* Desktop Navigation Links */}
           <nav className="hidden lg:flex items-center gap-0.5 xl:gap-1">
@@ -41,8 +41,10 @@ export function Header() {
           {/* Mobile Hamburger Button */}
           <button
             onClick={() => setMobileNavOpen(true)}
-            className="lg:hidden p-2 rounded-md text-[#0F3B68] hover:bg-[#FAF9F5] focus:outline-none focus:ring-2 focus:ring-[#0F3B68]"
+            className="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg text-[#0F3B68] transition-colors hover:bg-[#FAF9F5] focus:outline-none focus:ring-2 focus:ring-[#0F3B68] lg:hidden"
             aria-label="Open menu"
+            aria-expanded={mobileNavOpen}
+            aria-controls="mobile-navigation"
           >
             <Menu className="w-6 h-6" />
           </button>

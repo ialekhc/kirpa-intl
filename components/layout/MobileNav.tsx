@@ -1,6 +1,6 @@
 'use client';
 
-import React from 'react';
+import React, { useEffect } from 'react';
 import Link from 'next/link';
 import { X, Phone, Mail, MapPin, Briefcase } from 'lucide-react';
 import { mainNavigation } from '@/data/navigation';
@@ -14,10 +14,33 @@ interface MobileNavProps {
 }
 
 export function MobileNav({ isOpen, onClose }: MobileNavProps) {
+  useEffect(() => {
+    if (!isOpen) return;
+
+    const previousOverflow = document.body.style.overflow;
+    const closeOnEscape = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') onClose();
+    };
+
+    document.body.style.overflow = 'hidden';
+    window.addEventListener('keydown', closeOnEscape);
+
+    return () => {
+      document.body.style.overflow = previousOverflow;
+      window.removeEventListener('keydown', closeOnEscape);
+    };
+  }, [isOpen, onClose]);
+
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 z-50 lg:hidden">
+    <div
+      id="mobile-navigation"
+      className="fixed inset-0 z-50 lg:hidden"
+      role="dialog"
+      aria-modal="true"
+      aria-label="Mobile navigation"
+    >
       {/* Backdrop */}
       <div
         className="fixed inset-0 bg-black/60 backdrop-blur-xs transition-opacity"
@@ -26,14 +49,14 @@ export function MobileNav({ isOpen, onClose }: MobileNavProps) {
       />
 
       {/* Drawer */}
-      <div className="fixed inset-y-0 right-0 w-full max-w-sm bg-white shadow-xl flex flex-col justify-between overflow-y-auto">
+      <div className="fixed inset-y-0 right-0 flex w-[min(100%,24rem)] flex-col justify-between overflow-y-auto bg-white shadow-xl">
         <div>
           {/* Header */}
-          <div className="flex items-center justify-between p-4 border-b border-[#E2E8F0]">
-            <Logo onClick={onClose} />
+          <div className="flex min-w-0 items-center justify-between gap-3 border-b border-[#E2E8F0] p-4">
+            <Logo onClick={onClose} size="sm" className="min-w-0" />
             <button
               onClick={onClose}
-              className="p-2 rounded-md text-[#5A6B82] hover:text-[#0F3B68] hover:bg-[#FAF9F5] focus:outline-none"
+              className="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg text-[#5A6B82] hover:bg-[#FAF9F5] hover:text-[#0F3B68] focus:outline-none focus:ring-2 focus:ring-[#0F3B68]"
               aria-label="Close menu"
             >
               <X className="w-6 h-6" />
