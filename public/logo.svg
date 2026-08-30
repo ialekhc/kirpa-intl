@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" width="100%" height="100%">
+  <!-- Gold Horizon Arch -->
+  <path d="M 25 125 A 95 95 0 0 1 215 125" fill="none" stroke="#D4A017" stroke-width="6" stroke-linecap="round"/>
+  
+  <!-- Left Figure -->
+  <circle cx="82" cy="55" r="16" fill="#0F3B68"/>
+  <path d="M 52 58 L 82 130 L 112 38 L 100 38 L 82 82 L 64 58 Z" fill="#0F3B68"/>
+
+  <!-- Right Figure -->
+  <circle cx="158" cy="55" r="16" fill="#0F3B68"/>
+  <path d="M 128 38 L 158 130 L 188 58 L 176 58 L 158 82 L 140 38 Z" fill="#0F3B68"/>
+
+  <!-- KIRPA Text -->
+  <text x="120" y="180" font-family="system-ui, -apple-system, sans-serif" font-weight="900" font-size="42" fill="#0F3B68" text-anchor="middle" letter-spacing="3">KIRPA</text>
+  
+  <!-- INTERNATIONAL Text -->
+  <text x="120" y="212" font-family="system-ui, -apple-system, sans-serif" font-weight="800" font-size="16" fill="#D4A017" text-anchor="middle" letter-spacing="6">INTERNATIONAL</text>
+</svg>

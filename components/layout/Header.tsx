@@ -1,0 +1,56 @@
+'use client';
+
+import React, { useState } from 'react';
+import Link from 'next/link';
+import { Menu } from 'lucide-react';
+import { mainNavigation } from '@/data/navigation';
+import { Button } from '@/components/ui/Button';
+import { MobileNav } from '@/components/layout/MobileNav';
+import { Logo } from '@/components/ui/Logo';
+
+export function Header() {
+  const [mobileNavOpen, setMobileNavOpen] = useState(false);
+
+  return (
+    <header className="sticky top-0 z-40 bg-white/95 backdrop-blur-xs border-b border-[#E2E8F0] shadow-2xs">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex items-center justify-between h-18 sm:h-20">
+          {/* Official Logo Component */}
+          <Logo />
+
+          {/* Desktop Navigation Links */}
+          <nav className="hidden lg:flex items-center gap-0.5 xl:gap-1">
+            {mainNavigation.map((item) => (
+              <Link
+                key={item.href}
+                href={item.href}
+                className="px-3 py-2 text-sm font-bold text-[#334155] hover:text-[#0F3B68] transition-colors rounded-md hover:bg-[#F8FAFC]"
+              >
+                {item.label}
+              </Link>
+            ))}
+          </nav>
+
+          {/* Action CTAs */}
+          <div className="hidden lg:flex items-center">
+            <Button href="/jobs" variant="primary" size="sm">
+              View Jobs
+            </Button>
+          </div>
+
+          {/* Mobile Hamburger Button */}
+          <button
+            onClick={() => setMobileNavOpen(true)}
+            className="lg:hidden p-2 rounded-md text-[#0F3B68] hover:bg-[#FAF9F5] focus:outline-none focus:ring-2 focus:ring-[#0F3B68]"
+            aria-label="Open menu"
+          >
+            <Menu className="w-6 h-6" />
+          </button>
+        </div>
+      </div>
+
+      {/* Mobile Drawer */}
+      <MobileNav isOpen={mobileNavOpen} onClose={() => setMobileNavOpen(false)} />
+    </header>
+  );
+}
