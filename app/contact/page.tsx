@@ -153,7 +153,7 @@ export default function ContactPage() {
                 <div className="flex items-start gap-2.5">
                   <Globe className="w-5 h-5 text-[#D4A017] shrink-0 mt-0.5" />
                   <span>
-                    <strong>European Partner:</strong> {company.europeanPartner.name} (Bulgaria, Greece, Romania)
+                    <strong>European Partner:</strong> {company.europeanPartner.name} (Romania, Bulgaria, Greece)
                   </span>
                 </div>
               </div>

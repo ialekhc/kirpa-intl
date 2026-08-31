@@ -93,7 +93,7 @@ export function PartnershipSection() {
 
           {/* Explanation Text */}
           <p className="text-center text-sm sm:text-base text-[#5A6B82] max-w-3xl mx-auto leading-relaxed mb-8">
-            This international partnership supports workforce sourcing, candidate screening, documentation coordination, and employment placement between qualified Nepalese workers and participating European employers in Bulgaria, Greece, and Romania.
+            This international partnership supports workforce sourcing, candidate screening, documentation coordination, and employment placement between qualified Nepalese workers and participating European employers in Romania, Bulgaria, and Greece.
           </p>
 
           {/* Action Buttons */}

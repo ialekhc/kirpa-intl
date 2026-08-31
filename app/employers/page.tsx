@@ -18,7 +18,7 @@ export default function EmployersPage() {
     { title: 'Hardworking & Versatile', desc: 'Nepalese workers are globally recognized for dedication, adaptability, and high productivity.' },
     { title: 'Wide Skill Spectrum', desc: 'Sourcing capabilities spanning skilled trade technicians, manufacturing operators, and hospitality staff.' },
     { title: 'Cost-Effective Sourcing', desc: 'Streamlined recruitment management in full compliance with Nepalese and international labor laws.' },
-    { title: 'Strong European Track Record', desc: 'Proven partnership frameworks with Global Work Specialist for Bulgaria, Greece, and Romania.' },
+    { title: 'Strong European Track Record', desc: 'Proven partnership frameworks with Global Work Specialist for Romania, Bulgaria, and Greece.' },
   ];
 
   return (
@@ -93,11 +93,11 @@ export default function EmployersPage() {
               <Globe className="w-8 h-8 text-[#D4A017] shrink-0" />
               <div>
                 <h3 className="text-2xl font-bold text-white">European Partner Network</h3>
-                <p className="text-xs text-blue-200">{company.europeanPartner.name} &bull; Bulgaria, Greece, Romania</p>
+                <p className="text-xs text-blue-200">{company.europeanPartner.name} &bull; Romania, Bulgaria, Greece</p>
               </div>
             </div>
             <p className="text-sm sm:text-base text-slate-200 leading-relaxed max-w-4xl">
-              For European employers operating in Bulgaria, Greece, and Romania, our joint partnership with Global Work Specialist facilitates seamless demand clearance, local visa embassy coordination, trade testing, and deployment logistics.
+              For European employers operating in Romania, Bulgaria, and Greece, our joint partnership with Global Work Specialist facilitates seamless demand clearance, local visa embassy coordination, trade testing, and deployment logistics.
             </p>
           </div>
         </Container>

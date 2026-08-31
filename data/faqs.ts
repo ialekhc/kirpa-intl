@@ -18,7 +18,7 @@ export const faqs: FAQItem[] = [
     category: 'General',
     question: 'What is the role of Global Work Specialist on this website?',
     answer:
-      'Global Work Specialist is KIRPA INTERNATIONAL’s designated European Recruitment Partner for workforce sourcing and recruitment coordination in Bulgaria, Greece, and Romania.',
+      'Global Work Specialist is KIRPA INTERNATIONAL’s designated European Recruitment Partner for workforce sourcing and recruitment coordination in Romania, Bulgaria, and Greece.',
   },
   {
     id: 'faq-03',

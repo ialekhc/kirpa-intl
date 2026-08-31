@@ -26,7 +26,7 @@ export const company: CompanyInfo = {
     countries: ['Romania', 'Bulgaria', 'Greece'],
     tagline: 'Partnered for recruitment in Romania, Bulgaria & Greece',
     description:
-      'KIRPA INTERNATIONAL works in active recruitment partnership with Global Work Specialist to coordinate transparent workforce sourcing, verification, and deployment for employers in Bulgaria, Greece, and Romania.',
+      'KIRPA INTERNATIONAL works in active recruitment partnership with Global Work Specialist to coordinate transparent workforce sourcing, verification, and deployment for employers in Romania, Bulgaria, and Greece.',
   },
   trustStatement: 'Licensed Foreign Employment Recruitment Company in Nepal',
 };

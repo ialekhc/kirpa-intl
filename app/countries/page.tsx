@@ -6,7 +6,7 @@ import { Breadcrumbs } from '@/components/layout/Breadcrumbs';
 import { DestinationCountries } from '@/components/home/DestinationCountries';
 
 export const metadata: Metadata = {
-  title: 'Destination Countries | Bulgaria, Greece, Romania Recruitment',
+  title: 'Destination Countries | Romania, Bulgaria, Greece Recruitment',
   description:
     'Explore overseas employment destination countries supported through KIRPA INTERNATIONAL and European recruitment partner Global Work Specialist.',
 };
@@ -35,7 +35,7 @@ export default function CountriesPage() {
               >
                 {company.europeanPartner.name}
               </a>{' '}
-              for foreign employment sourcing across Bulgaria, Greece, and Romania.
+              for foreign employment sourcing across Romania, Bulgaria, and Greece.
             </p>
           </div>
         </Container>

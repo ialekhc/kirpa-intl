@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     template: `%s | ${company.shortName}`,
   },
   description:
-    'KIRPA INTERNATIONAL PVT. LTD. (License No. 1847/082/083) is a licensed Nepal-based foreign employment recruitment company connecting Nepalese workers with international employment opportunities, including recruitment partnerships for Bulgaria, Greece, and Romania.',
+    'KIRPA INTERNATIONAL PVT. LTD. (License No. 1847/082/083) is a licensed Nepal-based foreign employment recruitment company connecting Nepalese workers with international employment opportunities, including recruitment partnerships for Romania, Bulgaria, and Greece.',
   keywords: [
     'KIRPA INTERNATIONAL',
     'Overseas recruitment Nepal',
@@ -39,7 +39,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: `${company.name} | Foreign Employment Recruitment Company Nepal`,
     description:
-      'Licensed Nepal foreign employment recruitment company partnered with Global Work Specialist for recruitment in Bulgaria, Greece, and Romania.',
+      'Licensed Nepal foreign employment recruitment company partnered with Global Work Specialist for recruitment in Romania, Bulgaria, and Greece.',
     url: company.website,
     siteName: company.name,
     locale: 'en_US',

@@ -10,12 +10,12 @@ export function Footer() {
   return (
     <footer className="bg-[#0B2545] text-white pt-12 sm:pt-16 pb-8 border-t border-[#1E3A5F]">
       <Container size="wide">
-        {/* 5-Column Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 lg:gap-6 pb-12 border-b border-[#1E3A5F]">
+        {/* Company profile and footer links */}
+        <div className="grid grid-cols-1 gap-8 border-b border-[#1E3A5F] pb-12 md:grid-cols-2 lg:grid-cols-12 lg:gap-8">
           {/* Column 1: Company Profile */}
-          <div className="lg:col-span-1 space-y-4">
-            <Logo variant="light" />
-            <p className="text-xs text-slate-300 leading-relaxed">
+          <div className="space-y-4 md:col-span-2 lg:col-span-4 lg:pr-6">
+            <Logo variant="light" size="md" />
+            <p className="max-w-sm text-sm text-slate-300 leading-relaxed">
               Licensed foreign employment recruitment agency connecting Nepalese workers with responsible international employment opportunities.
             </p>
             <div className="inline-flex items-center gap-1.5 px-2.5 py-1 bg-[#1E3A5F] text-slate-200 rounded-md text-xs font-medium border border-[#2C4E78]">
@@ -25,7 +25,7 @@ export function Footer() {
           </div>
 
           {/* Column 2: Company Links */}
-          <div>
+          <div className="lg:col-span-2">
             <h5 className="text-sm font-bold text-[#D4A017] uppercase tracking-wider mb-3">Company</h5>
             <ul className="space-y-2 text-xs text-slate-300">
               {footerLinks.company.map((link) => (
@@ -39,7 +39,7 @@ export function Footer() {
           </div>
 
           {/* Column 3: Job Seekers */}
-          <div>
+          <div className="lg:col-span-2">
             <h5 className="text-sm font-bold text-[#D4A017] uppercase tracking-wider mb-3">Job Seekers</h5>
             <ul className="space-y-2 text-xs text-slate-300">
               {footerLinks.jobSeekers.map((link) => (
@@ -53,7 +53,7 @@ export function Footer() {
           </div>
 
           {/* Column 4: Employers */}
-          <div>
+          <div className="lg:col-span-2">
             <h5 className="text-sm font-bold text-[#D4A017] uppercase tracking-wider mb-3">Employers</h5>
             <ul className="space-y-2 text-xs text-slate-300">
               {footerLinks.employers.map((link) => (
@@ -67,7 +67,7 @@ export function Footer() {
           </div>
 
           {/* Column 5: Contact Information */}
-          <div className="space-y-3">
+          <div className="min-w-0 space-y-3 lg:col-span-2">
             <h5 className="text-sm font-bold text-[#D4A017] uppercase tracking-wider mb-3">Contact Us</h5>
             <div className="text-xs text-slate-300 space-y-2">
               <div className="flex items-start gap-2">
@@ -88,7 +88,7 @@ export function Footer() {
               </div>
               <div className="flex items-center gap-2">
                 <Mail className="w-4 h-4 text-[#D4A017] shrink-0" />
-                <a href={`mailto:${company.email}`} className="hover:text-white transition-colors">
+                <a href={`mailto:${company.email}`} className="min-w-0 break-words hover:text-white transition-colors">
                   {company.email}
                 </a>
               </div>

@@ -18,7 +18,7 @@ export function WhyKirpa() {
     },
     {
       title: 'European Partnerships',
-      description: 'Recruitment coordination with Global Work Specialist for Bulgaria, Greece, and Romania.',
+      description: 'Recruitment coordination with Global Work Specialist for Romania, Bulgaria, and Greece.',
       icon: Globe,
     },
     {

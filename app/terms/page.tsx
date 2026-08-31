@@ -33,7 +33,7 @@ export default function TermsPage() {
 
             <h3 className="text-lg font-bold text-[#17202A]">3. European Partnership Context</h3>
             <p>
-              Recruitment coordination for Bulgaria, Greece, and Romania is conducted in official partnership with {company.europeanPartner.name}. Each party operates within its authorized jurisdiction and regulatory framework.
+              Recruitment coordination for Romania, Bulgaria, and Greece is conducted in official partnership with {company.europeanPartner.name}. Each party operates within its authorized jurisdiction and regulatory framework.
             </p>
 
             <h3 className="text-lg font-bold text-[#17202A]">4. Anti-Fraud & Verification Notice</h3>
