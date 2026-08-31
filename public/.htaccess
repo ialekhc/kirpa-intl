@@ -4,6 +4,7 @@ ErrorDocument 404 /404.html
 
 <IfModule mod_rewrite.c>
   RewriteEngine On
+  RewriteRule ^jobs(?:/.*)?$ /countries/ [R=301,L]
   RewriteCond %{HTTPS} !=on [OR]
   RewriteCond %{HTTP_HOST} !^www\.kirpainternational\.com$ [NC]
   RewriteRule ^ https://www.kirpainternational.com%{REQUEST_URI} [R=301,L]

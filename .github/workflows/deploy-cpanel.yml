@@ -104,6 +104,7 @@ jobs:
             'put .htaccess' \
             'bye' > /tmp/deploy.sftp
           sshpass -e sftp -b /tmp/deploy.sftp \
+            -o BatchMode=no \
             -o PreferredAuthentications=password \
             -o PubkeyAuthentication=no \
             -o StrictHostKeyChecking=yes \
@@ -125,6 +126,7 @@ jobs:
             "get /home/$CPANEL_SFTP_USER/public_html/countries/romania/index.html verification/countries/romania/index.html" \
             'bye' > /tmp/verify.sftp
           sshpass -e sftp -b /tmp/verify.sftp \
+            -o BatchMode=no \
             -o PreferredAuthentications=password \
             -o PubkeyAuthentication=no \
             -o StrictHostKeyChecking=yes \

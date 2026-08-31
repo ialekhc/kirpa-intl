@@ -2,7 +2,7 @@
 
 import React, { useEffect } from 'react';
 import Link from 'next/link';
-import { X, Phone, Mail, MapPin, Briefcase, ChevronRight } from 'lucide-react';
+import { X, Phone, Mail, MapPin, Globe, ChevronRight } from 'lucide-react';
 import { mainNavigation } from '@/data/navigation';
 import { company } from '@/data/company';
 import { Button } from '@/components/ui/Button';
@@ -97,9 +97,9 @@ export function MobileNav({ isOpen, onClose }: MobileNavProps) {
             Quick actions
           </p>
           <div className="grid grid-cols-2 gap-2">
-            <Button href="/jobs" onClick={onClose} variant="primary" size="sm" className="w-full min-h-10">
-              <Briefcase className="w-4 h-4" />
-              View Jobs
+            <Button href="/countries" onClick={onClose} variant="primary" size="sm" className="w-full min-h-10">
+              <Globe className="w-4 h-4" />
+              Countries
             </Button>
             <Button href="/employers#contact-employers" onClick={onClose} variant="outline" size="sm" className="w-full min-h-10">
               Partner With Us

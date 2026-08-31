@@ -6,7 +6,6 @@ import { DestinationCountries } from '@/components/home/DestinationCountries';
 import { IndustriesGrid } from '@/components/home/IndustriesGrid';
 import { RecruitmentSteps } from '@/components/home/RecruitmentSteps';
 import { JobSeekersSection } from '@/components/home/JobSeekersSection';
-import { CurrentJobsPreview } from '@/components/home/CurrentJobsPreview';
 import { EmployersSection } from '@/components/home/EmployersSection';
 import { WhyKirpa } from '@/components/home/WhyKirpa';
 import { WorkerSafety } from '@/components/home/WorkerSafety';
@@ -24,7 +23,6 @@ export default function HomePage() {
       <IndustriesGrid />
       <RecruitmentSteps />
       <JobSeekersSection />
-      <CurrentJobsPreview />
       <EmployersSection />
       <WhyKirpa />
       <WorkerSafety />

@@ -35,8 +35,8 @@ export function Header() {
 
           {/* Action CTAs */}
           <div className="hidden lg:flex items-center">
-            <Button href="/jobs" variant="primary" size="sm">
-              View Jobs
+            <Button href="/countries" variant="primary" size="sm">
+              Explore Countries
             </Button>
           </div>
 

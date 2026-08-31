@@ -1,5 +1,5 @@
 import React from 'react';
-import { Phone, Briefcase, Building2 } from 'lucide-react';
+import { Phone, Globe, Building2 } from 'lucide-react';
 import { company } from '@/data/company';
 import { Container } from '@/components/ui/Container';
 import { Button } from '@/components/ui/Button';
@@ -21,9 +21,9 @@ export function FinalCTA() {
         </p>
 
         <div className="flex flex-wrap items-center justify-center gap-4 pt-4">
-          <Button href="/jobs" variant="gold" size="lg">
-            <Briefcase className="w-5 h-5" />
-            Explore Jobs
+          <Button href="/countries" variant="gold" size="lg">
+            <Globe className="w-5 h-5" />
+            Explore Countries
           </Button>
           <Button href="/employers#enquiry" variant="secondary" size="lg" className="border border-slate-700">
             <Building2 className="w-5 h-5" />

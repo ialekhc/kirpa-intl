@@ -4,14 +4,12 @@ import { notFound } from 'next/navigation';
 import { Metadata } from 'next';
 import { Globe, CheckCircle2, ArrowRight } from 'lucide-react';
 import { countries } from '@/data/countries';
-import { jobs } from '@/data/jobs';
 import { company } from '@/data/company';
 import { Container } from '@/components/ui/Container';
 import { SectionHeader } from '@/components/ui/SectionHeader';
 import { Breadcrumbs } from '@/components/layout/Breadcrumbs';
 import { Button } from '@/components/ui/Button';
 import { Accordion } from '@/components/ui/Accordion';
-import { JobCard } from '@/components/jobs/JobCard';
 
 export async function generateStaticParams() {
   return countries.map((c) => ({
@@ -45,8 +43,6 @@ export default async function CountryDetailPage({
   if (!country) {
     notFound();
   }
-
-  const countryJobs = jobs.filter((j) => j.countrySlug === country.slug);
 
   return (
     <>
@@ -185,23 +181,6 @@ export default async function CountryDetailPage({
           </div>
         </Container>
       </section>
-
-      {/* Current Vacancies for this Country */}
-      {countryJobs.length > 0 && (
-        <section className="py-16 bg-white border-b border-[#E5E7EB]">
-          <Container size="wide">
-            <SectionHeader
-              eyebrow="Open Vacancies"
-              title={`Current Job Listings for ${country.name}`}
-            />
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {countryJobs.map((job) => (
-                <JobCard key={job.id} job={job} />
-              ))}
-            </div>
-          </Container>
-        </section>
-      )}
 
       {/* FAQs */}
       <section className="py-16 bg-white">

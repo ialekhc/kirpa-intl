@@ -1,6 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
-import { ShieldCheck, Briefcase, Building2 } from 'lucide-react';
+import { ShieldCheck, Globe, Building2 } from 'lucide-react';
 import { company } from '@/data/company';
 import { Container } from '@/components/ui/Container';
 import { Button } from '@/components/ui/Button';
@@ -30,9 +30,9 @@ export function Hero() {
 
             {/* Call to Actions */}
             <div className="flex flex-col sm:flex-row sm:items-center gap-3 pt-3">
-              <Button href="/jobs" variant="primary" size="lg">
-                <Briefcase className="w-5 h-5" />
-                View Current Jobs
+              <Button href="/countries" variant="primary" size="lg">
+                <Globe className="w-5 h-5" />
+                Explore Countries
               </Button>
               <Button href="/employers#contact-employers" variant="outline" size="lg">
                 <Building2 className="w-5 h-5" />

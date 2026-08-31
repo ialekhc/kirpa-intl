@@ -1,6 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
-import { Briefcase, Workflow, FileText, PhoneCall, ShieldAlert, ArrowRight } from 'lucide-react';
+import { Globe, Workflow, FileText, PhoneCall, ShieldAlert, ArrowRight } from 'lucide-react';
 import { Container } from '@/components/ui/Container';
 import { SectionHeader } from '@/components/ui/SectionHeader';
 import { company } from '@/data/company';
@@ -8,10 +8,10 @@ import { company } from '@/data/company';
 export function JobSeekersSection() {
   const actions = [
     {
-      title: 'Browse Vacancies',
-      desc: 'Explore active verified job opportunities in Bulgaria, Greece, Romania and other markets.',
-      href: '/jobs',
-      icon: Briefcase,
+      title: 'Explore Destinations',
+      desc: 'Learn about recruitment opportunities in Romania, Bulgaria, Greece, and other markets.',
+      href: '/countries',
+      icon: Globe,
     },
     {
       title: 'Recruitment Process',
@@ -42,7 +42,7 @@ export function JobSeekersSection() {
             <SectionHeader
               eyebrow="For Candidate Aspirants"
               title="Looking for an opportunity abroad?"
-              description="Browse available jobs, understand the recruitment process, prepare required documents, and contact KIRPA INTERNATIONAL through official channels."
+              description="Explore destination countries, understand the recruitment process, prepare required documents, and contact KIRPA INTERNATIONAL through official channels."
             />
 
             {/* Safety Callout Box */}

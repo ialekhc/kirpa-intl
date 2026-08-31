@@ -23,9 +23,9 @@ export const faqs: FAQItem[] = [
   {
     id: 'faq-03',
     category: 'Job Seekers',
-    question: 'How can I apply for published job vacancies?',
+    question: 'How can I enquire about recruitment opportunities?',
     answer:
-      'You can browse our current verified opportunities on the Jobs page and click "Enquire About This Job" to contact KIRPA INTERNATIONAL directly, or visit our office in Shanti Marg, Lalitpur Metropolitan City–05 with your original passport and CV.',
+      'Review our destination country and recruitment information, then contact KIRPA INTERNATIONAL directly through our official channels or visit our office in Shanti Marg, Lalitpur Metropolitan City–05 with your original passport and CV.',
   },
   {
     id: 'faq-04',

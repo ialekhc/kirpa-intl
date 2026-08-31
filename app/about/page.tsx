@@ -188,7 +188,7 @@ export default function AboutPage() {
 
             <div className="flex flex-col justify-center gap-3 pt-4 sm:flex-row">
               <Button href="/countries" variant="primary" className="w-full sm:w-auto">
-                View Jobs by Country
+                Explore Partner Countries
                 <ArrowRight className="w-4 h-4" />
               </Button>
               <Button
