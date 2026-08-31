@@ -49,10 +49,10 @@ jobs:
           if-no-files-found: error
           retention-days: 14
 
-      - name: Install SFTP deployment client
+      - name: Install SFTP tools
         run: |
           sudo apt-get update
-          sudo apt-get install --yes lftp
+          sudo apt-get install --yes lftp sshpass
 
       - name: Configure verified cPanel host key
         env:
@@ -95,16 +95,21 @@ jobs:
           CPANEL_SFTP_PASSWORD: ${{ secrets.CPANEL_SFTP_PASSWORD }}
           CPANEL_SFTP_PORT: ${{ secrets.CPANEL_SFTP_PORT }}
           CPANEL_SFTP_USER: ${{ secrets.CPANEL_SFTP_USER }}
+          SSHPASS: ${{ secrets.CPANEL_SFTP_PASSWORD }}
         run: |
-          lftp <<LFTP
-          set cmd:fail-exit yes
-          set net:max-retries 3
-          set net:timeout 20
-          set sftp:connect-program "ssh -a -x -o StrictHostKeyChecking=yes -o UserKnownHostsFile=$HOME/.ssh/known_hosts"
-          open -u "$CPANEL_SFTP_USER","$CPANEL_SFTP_PASSWORD" "sftp://$CPANEL_SFTP_HOST:$CPANEL_SFTP_PORT"
-          mirror --reverse --delete --verbose --parallel=4 --exclude-glob '.well-known/**' --exclude-glob 'cgi-bin/**' out/ "/home/$CPANEL_SFTP_USER/public_html/"
-          bye
-          LFTP
+          printf '%s\n' \
+            'lcd out' \
+            "cd /home/$CPANEL_SFTP_USER/public_html" \
+            'put -r *' \
+            'put .htaccess' \
+            'bye' > /tmp/deploy.sftp
+          sshpass -e sftp -b /tmp/deploy.sftp \
+            -o PreferredAuthentications=password \
+            -o PubkeyAuthentication=no \
+            -o StrictHostKeyChecking=yes \
+            -o UserKnownHostsFile="$HOME/.ssh/known_hosts" \
+            -P "$CPANEL_SFTP_PORT" \
+            "$CPANEL_SFTP_USER@$CPANEL_SFTP_HOST"
 
       - name: Verify deployed files
         env:
@@ -112,17 +117,19 @@ jobs:
           CPANEL_SFTP_PASSWORD: ${{ secrets.CPANEL_SFTP_PASSWORD }}
           CPANEL_SFTP_PORT: ${{ secrets.CPANEL_SFTP_PORT }}
           CPANEL_SFTP_USER: ${{ secrets.CPANEL_SFTP_USER }}
+          SSHPASS: ${{ secrets.CPANEL_SFTP_PASSWORD }}
         run: |
           mkdir -p verification/countries/romania
-          lftp <<LFTP
-          set cmd:fail-exit yes
-          set net:max-retries 3
-          set net:timeout 20
-          set sftp:connect-program "ssh -a -x -o StrictHostKeyChecking=yes -o UserKnownHostsFile=$HOME/.ssh/known_hosts"
-          open -u "$CPANEL_SFTP_USER","$CPANEL_SFTP_PASSWORD" "sftp://$CPANEL_SFTP_HOST:$CPANEL_SFTP_PORT"
-          get "/home/$CPANEL_SFTP_USER/public_html/index.html" -o verification/index.html
-          get "/home/$CPANEL_SFTP_USER/public_html/countries/romania/index.html" -o verification/countries/romania/index.html
-          bye
-          LFTP
+          printf '%s\n' \
+            "get /home/$CPANEL_SFTP_USER/public_html/index.html verification/index.html" \
+            "get /home/$CPANEL_SFTP_USER/public_html/countries/romania/index.html verification/countries/romania/index.html" \
+            'bye' > /tmp/verify.sftp
+          sshpass -e sftp -b /tmp/verify.sftp \
+            -o PreferredAuthentications=password \
+            -o PubkeyAuthentication=no \
+            -o StrictHostKeyChecking=yes \
+            -o UserKnownHostsFile="$HOME/.ssh/known_hosts" \
+            -P "$CPANEL_SFTP_PORT" \
+            "$CPANEL_SFTP_USER@$CPANEL_SFTP_HOST"
           cmp out/index.html verification/index.html
           cmp out/countries/romania/index.html verification/countries/romania/index.html

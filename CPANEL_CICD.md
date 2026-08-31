@@ -5,7 +5,7 @@ The repository deploys the static Next.js export to cPanel automatically with Gi
 ## Workflows
 
 - **CI** runs a clean install, ESLint, and a production static build for pull requests and non-production branches.
-- **Deploy to cPanel** runs the same checks for `main`, stores the exact build artifact, backs up the current public site, synchronizes the new build over encrypted SFTP, and verifies the deployed files byte-for-byte.
+- **Deploy to cPanel** runs the same checks for `main`, stores the exact build artifact, backs up the current public site, uploads the new build with OpenSSH SFTP, and verifies the deployed files byte-for-byte.
 
 The cPanel account does not provide shell access, so deployment intentionally uses SFTP instead of SSH commands or `rsync`.
 
@@ -31,6 +31,6 @@ Secrets must never be committed to the repository.
 4. The workflow stores both the new build and a pre-deployment backup for 14 days.
 5. Deployment succeeds only when the remote homepage and Romania page exactly match the generated files.
 
-The synchronization preserves cPanel-managed `.well-known/` and `cgi-bin/` directories. Files removed from the generated site are removed from the rest of `public_html`, preventing stale pages and assets.
+The deployment preserves cPanel-managed `.well-known/` and `cgi-bin/` directories. Every generated file, including the hidden `.htaccess`, is uploaded on each release.
 
 An authorized maintainer can redeploy the current `main` commit from **GitHub → Actions → Deploy to cPanel → Run workflow**.
