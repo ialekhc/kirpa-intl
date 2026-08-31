@@ -102,6 +102,9 @@ jobs:
           set net:timeout 20
           set sftp:connect-program "ssh -a -x -o StrictHostKeyChecking=yes -o UserKnownHostsFile=$HOME/.ssh/known_hosts"
           open -u "$CPANEL_SFTP_USER","$CPANEL_SFTP_PASSWORD" "sftp://$CPANEL_SFTP_HOST:$CPANEL_SFTP_PORT"
+          set cmd:fail-exit no
+          rm -r "/home/$CPANEL_SFTP_USER/public_html/jobs"
+          set cmd:fail-exit yes
           mirror --reverse --verbose --parallel=4 out/ "/home/$CPANEL_SFTP_USER/public_html/"
           put -O "/home/$CPANEL_SFTP_USER/public_html/" out/.htaccess
           bye
