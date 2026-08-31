@@ -1,0 +1,128 @@
+name: Deploy to cPanel
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: cpanel-production
+  cancel-in-progress: false
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    environment:
+      name: production
+      url: https://www.kirpainternational.com/
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Lint
+        run: npm run lint
+
+      - name: Build static website
+        run: npm run build:static
+
+      - name: Save production build artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: kirpa-production-${{ github.sha }}
+          path: out/
+          include-hidden-files: true
+          if-no-files-found: error
+          retention-days: 14
+
+      - name: Install SFTP deployment client
+        run: |
+          sudo apt-get update
+          sudo apt-get install --yes lftp
+
+      - name: Configure verified cPanel host key
+        env:
+          CPANEL_SFTP_KNOWN_HOSTS: ${{ secrets.CPANEL_SFTP_KNOWN_HOSTS }}
+        run: |
+          install -d -m 700 ~/.ssh
+          printf '%s\n' "$CPANEL_SFTP_KNOWN_HOSTS" > ~/.ssh/known_hosts
+          chmod 600 ~/.ssh/known_hosts
+
+      - name: Back up current public site
+        env:
+          CPANEL_SFTP_HOST: ${{ secrets.CPANEL_SFTP_HOST }}
+          CPANEL_SFTP_PASSWORD: ${{ secrets.CPANEL_SFTP_PASSWORD }}
+          CPANEL_SFTP_PORT: ${{ secrets.CPANEL_SFTP_PORT }}
+          CPANEL_SFTP_USER: ${{ secrets.CPANEL_SFTP_USER }}
+        run: |
+          mkdir -p backup
+          lftp <<LFTP
+          set cmd:fail-exit yes
+          set net:max-retries 3
+          set net:timeout 20
+          set sftp:connect-program "ssh -a -x -o StrictHostKeyChecking=yes -o UserKnownHostsFile=$HOME/.ssh/known_hosts"
+          open -u "$CPANEL_SFTP_USER","$CPANEL_SFTP_PASSWORD" "sftp://$CPANEL_SFTP_HOST:$CPANEL_SFTP_PORT"
+          mirror --verbose --exclude-glob '.well-known/**' --exclude-glob 'cgi-bin/**' "/home/$CPANEL_SFTP_USER/public_html/" backup/
+          bye
+          LFTP
+
+      - name: Save pre-deployment backup
+        uses: actions/upload-artifact@v4
+        with:
+          name: kirpa-backup-before-${{ github.run_id }}
+          path: backup/
+          include-hidden-files: true
+          if-no-files-found: error
+          retention-days: 14
+
+      - name: Synchronize build to cPanel
+        env:
+          CPANEL_SFTP_HOST: ${{ secrets.CPANEL_SFTP_HOST }}
+          CPANEL_SFTP_PASSWORD: ${{ secrets.CPANEL_SFTP_PASSWORD }}
+          CPANEL_SFTP_PORT: ${{ secrets.CPANEL_SFTP_PORT }}
+          CPANEL_SFTP_USER: ${{ secrets.CPANEL_SFTP_USER }}
+        run: |
+          lftp <<LFTP
+          set cmd:fail-exit yes
+          set net:max-retries 3
+          set net:timeout 20
+          set sftp:connect-program "ssh -a -x -o StrictHostKeyChecking=yes -o UserKnownHostsFile=$HOME/.ssh/known_hosts"
+          open -u "$CPANEL_SFTP_USER","$CPANEL_SFTP_PASSWORD" "sftp://$CPANEL_SFTP_HOST:$CPANEL_SFTP_PORT"
+          mirror --reverse --delete --verbose --parallel=4 --exclude-glob '.well-known/**' --exclude-glob 'cgi-bin/**' out/ "/home/$CPANEL_SFTP_USER/public_html/"
+          bye
+          LFTP
+
+      - name: Verify deployed files
+        env:
+          CPANEL_SFTP_HOST: ${{ secrets.CPANEL_SFTP_HOST }}
+          CPANEL_SFTP_PASSWORD: ${{ secrets.CPANEL_SFTP_PASSWORD }}
+          CPANEL_SFTP_PORT: ${{ secrets.CPANEL_SFTP_PORT }}
+          CPANEL_SFTP_USER: ${{ secrets.CPANEL_SFTP_USER }}
+        run: |
+          mkdir -p verification/countries/romania
+          lftp <<LFTP
+          set cmd:fail-exit yes
+          set net:max-retries 3
+          set net:timeout 20
+          set sftp:connect-program "ssh -a -x -o StrictHostKeyChecking=yes -o UserKnownHostsFile=$HOME/.ssh/known_hosts"
+          open -u "$CPANEL_SFTP_USER","$CPANEL_SFTP_PASSWORD" "sftp://$CPANEL_SFTP_HOST:$CPANEL_SFTP_PORT"
+          get "/home/$CPANEL_SFTP_USER/public_html/index.html" -o verification/index.html
+          get "/home/$CPANEL_SFTP_USER/public_html/countries/romania/index.html" -o verification/countries/romania/index.html
+          bye
+          LFTP
+          cmp out/index.html verification/index.html
+          cmp out/countries/romania/index.html verification/countries/romania/index.html

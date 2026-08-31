@@ -3,6 +3,8 @@ import { company } from '@/data/company';
 import { countries } from '@/data/countries';
 import { jobs } from '@/data/jobs';
 
+export const dynamic = 'force-static';
+
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = company.website;
 

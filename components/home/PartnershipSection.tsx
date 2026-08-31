@@ -61,6 +61,16 @@ export function PartnershipSection() {
           {/* Countries Grid */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 my-8">
             <div className="bg-[#FAF9F5] p-5 rounded-xl border border-[#E2E8F0] flex items-center gap-4">
+              <span className="text-4xl shrink-0">🇷🇴</span>
+              <div>
+                <h4 className="font-bold text-[#0F3B68] text-lg">Romania</h4>
+                <p className="text-xs text-[#5A6B82]">
+                  Production Lines, Construction, Warehousing & Services
+                </p>
+              </div>
+            </div>
+
+            <div className="bg-[#FAF9F5] p-5 rounded-xl border border-[#E2E8F0] flex items-center gap-4">
               <span className="text-4xl shrink-0">🇧🇬</span>
               <div>
                 <h4 className="font-bold text-[#0F3B68] text-lg">Bulgaria</h4>
@@ -76,16 +86,6 @@ export function PartnershipSection() {
                 <h4 className="font-bold text-[#0F3B68] text-lg">Greece</h4>
                 <p className="text-xs text-[#5A6B82]">
                   Hospitality, Tourism, Agriculture & Food Processing
-                </p>
-              </div>
-            </div>
-
-            <div className="bg-[#FAF9F5] p-5 rounded-xl border border-[#E2E8F0] flex items-center gap-4">
-              <span className="text-4xl shrink-0">🇷🇴</span>
-              <div>
-                <h4 className="font-bold text-[#0F3B68] text-lg">Romania</h4>
-                <p className="text-xs text-[#5A6B82]">
-                  Production Lines, Construction, Warehousing & Services
                 </p>
               </div>
             </div>

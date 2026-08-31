@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100%" height="100%">
+  <rect width="100" height="100" rx="20" fill="#0B2545"/>
+  <!-- Gold Horizon Arch -->
+  <path d="M 12 55 A 42 42 0 0 1 88 55" fill="none" stroke="#D4A017" stroke-width="4.5" stroke-linecap="round"/>
+  <!-- Left Figure -->
+  <circle cx="36" cy="26" r="7" fill="#FFFFFF"/>
+  <path d="M 23 27 L 36 60 L 49 19 L 44 19 L 36 38 L 28 27 Z" fill="#FFFFFF"/>
+  <!-- Right Figure -->
+  <circle cx="64" cy="26" r="7" fill="#FFFFFF"/>
+  <path d="M 51 19 L 64 60 L 77 27 L 72 27 L 64 38 L 56 19 Z" fill="#FFFFFF"/>
+  <!-- Gold KIRPA Text snippet below -->
+  <text x="50" y="86" font-family="system-ui, -apple-system, sans-serif" font-weight="900" font-size="19" fill="#D4A017" text-anchor="middle" letter-spacing="1.5">KIRPA</text>
+</svg>

@@ -18,13 +18,13 @@ export const company: CompanyInfo = {
   mobile: '+977-9851451847',
   mobileRaw: '+9779851451847',
   email: 'info@kirpainternational.com',
-  website: 'https://official.kirpainternational.com',
+  website: 'https://www.kirpainternational.com',
   europeanPartner: {
     name: 'Global Work Specialist',
     website: 'https://global-work-specialist.com/',
     partnershipRole: 'European Recruitment Partner',
-    countries: ['Bulgaria', 'Greece', 'Romania'],
-    tagline: 'Partnered for recruitment in Bulgaria, Greece & Romania',
+    countries: ['Romania', 'Bulgaria', 'Greece'],
+    tagline: 'Partnered for recruitment in Romania, Bulgaria & Greece',
     description:
       'KIRPA INTERNATIONAL works in active recruitment partnership with Global Work Specialist to coordinate transparent workforce sourcing, verification, and deployment for employers in Bulgaria, Greece, and Romania.',
   },

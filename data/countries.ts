@@ -1,6 +1,8 @@
 import { DestinationCountry } from '@/types/country';
 
-export const countries: DestinationCountry[] = [
+const countryDisplayOrder = ['romania', 'bulgaria', 'greece'];
+
+export const countries = ([
   {
     id: 'bulgaria',
     slug: 'bulgaria',
@@ -219,4 +221,6 @@ export const countries: DestinationCountry[] = [
       },
     ],
   },
-];
+] satisfies DestinationCountry[]).sort(
+  (a, b) => countryDisplayOrder.indexOf(a.slug) - countryDisplayOrder.indexOf(b.slug),
+);
