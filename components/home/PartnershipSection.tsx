@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from 'next/image';
 import { Globe } from 'lucide-react';
 import { company } from '@/data/company';
 import { Container } from '@/components/ui/Container';
@@ -19,12 +20,40 @@ export function PartnershipSection() {
 
           {/* Partnership Highlight Box */}
           <div className="my-8 p-6 bg-[#0B2545] text-white rounded-xl border border-[#1E3A5F] text-center max-w-4xl mx-auto shadow-md">
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-3 text-lg sm:text-xl lg:text-2xl font-black tracking-tight">
-              <span className="text-white">{company.name}</span>
-              <span className="text-[#D4A017] font-normal text-xl">&times;</span>
-              <span className="text-blue-200">{company.europeanPartner.name}</span>
+            <div className="flex flex-col items-center justify-center gap-5 sm:flex-row sm:gap-8">
+              <div className="flex h-28 w-28 items-center justify-center rounded-xl bg-[#FAF8F3] p-2 sm:h-32 sm:w-32">
+                <Image
+                  src="/kripa-intl.svg"
+                  alt="KIRPA INTERNATIONAL PVT. LTD."
+                  width={508}
+                  height={508}
+                  className="h-full w-full object-contain"
+                  sizes="(max-width: 640px) 112px, 128px"
+                />
+              </div>
+
+              <span className="text-3xl font-light text-[#D4A017]" aria-hidden="true">
+                &times;
+              </span>
+
+              <a
+                href={company.europeanPartner.website}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Visit Global Work Specialist – European Recruitment Partner website"
+                className="flex h-28 w-full max-w-sm items-center justify-center rounded-xl bg-white p-4 transition-transform hover:scale-[1.02] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#D4A017] focus-visible:ring-offset-2 focus-visible:ring-offset-[#0B2545] sm:h-32"
+              >
+                <Image
+                  src="/global-work-specialist-logo.png"
+                  alt="Global Work Specialist – European Recruitment Partner"
+                  width={928}
+                  height={300}
+                  className="h-auto max-h-full w-full object-contain"
+                  sizes="(max-width: 640px) calc(100vw - 96px), 320px"
+                />
+              </a>
             </div>
-            <p className="text-xs sm:text-sm text-[#D4A017] mt-2 font-bold uppercase tracking-wider">
+            <p className="mt-5 text-xs font-bold uppercase tracking-wider text-[#D4A017] sm:text-sm">
               {company.europeanPartner.tagline}
             </p>
           </div>

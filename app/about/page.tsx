@@ -171,7 +171,15 @@ export default function AboutPage() {
             </span>
 
             <h2 className="text-3xl sm:text-4xl font-black text-white">
-              International Strategic Partner: {company.europeanPartner.name}
+              International Strategic Partner:{' '}
+              <a
+                href={company.europeanPartner.website}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="underline decoration-[#D4A017] underline-offset-4 hover:text-blue-200"
+              >
+                {company.europeanPartner.name}
+              </a>
             </h2>
 
             <p className="text-base sm:text-lg text-slate-200 leading-relaxed">

@@ -9,6 +9,7 @@ export interface CompanyAddress {
 
 export interface EuropeanPartner {
   name: string;
+  website: string;
   partnershipRole: string;
   countries: string[];
   tagline: string;

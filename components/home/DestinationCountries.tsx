@@ -2,6 +2,7 @@ import React from 'react';
 import Image from 'next/image';
 import { ArrowRight, Globe } from 'lucide-react';
 import { countries } from '@/data/countries';
+import { company } from '@/data/company';
 import { Container } from '@/components/ui/Container';
 import { SectionHeader } from '@/components/ui/SectionHeader';
 import { Button } from '@/components/ui/Button';
@@ -42,10 +43,16 @@ export function DestinationCountries() {
                 {/* Content */}
                 <div className="p-6 space-y-4">
                   {/* Partner Attribution Badge */}
-                  <div className="inline-flex items-center gap-1.5 px-2.5 py-1 bg-[#EBF3FA] text-[#1E3A5F] border border-[#D4E4F7] rounded text-xs font-semibold">
+                  <a
+                    href={company.europeanPartner.website}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={`${country.partnerName} – European Recruitment Partner for ${country.name}`}
+                    className="inline-flex items-center gap-1.5 rounded border border-[#D4E4F7] bg-[#EBF3FA] px-2.5 py-1 text-xs font-semibold text-[#1E3A5F] transition-colors hover:border-[#0F3B68] hover:bg-[#DCEAF7]"
+                  >
                     <Globe className="w-3.5 h-3.5" />
                     <span>Partner: {country.partnerName}</span>
-                  </div>
+                  </a>
 
                   <p className="text-sm text-[#4B5563] leading-relaxed line-clamp-3">
                     {country.description}

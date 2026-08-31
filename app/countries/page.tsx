@@ -26,7 +26,16 @@ export default function CountriesPage() {
               Supported Destination Countries
             </h1>
             <p className="mt-4 text-base sm:text-lg text-[#4B5563] leading-relaxed">
-              KIRPA INTERNATIONAL works in partnership with European recruitment partner <strong>{company.europeanPartner.name}</strong> for foreign employment sourcing across Bulgaria, Greece, and Romania.
+              KIRPA INTERNATIONAL works in partnership with European recruitment partner{' '}
+              <a
+                href={company.europeanPartner.website}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-bold text-[#0F3B68] underline decoration-[#C69214] underline-offset-4 hover:text-[#C69214]"
+              >
+                {company.europeanPartner.name}
+              </a>{' '}
+              for foreign employment sourcing across Bulgaria, Greece, and Romania.
             </p>
           </div>
         </Container>

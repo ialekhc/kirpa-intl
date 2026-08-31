@@ -24,7 +24,14 @@ export function TrustStrip() {
             <span className="hidden sm:inline text-slate-600">|</span>
             <div>
               <span className="text-slate-400">Partner:</span>{' '}
-              <strong className="text-white font-bold">{company.europeanPartner.name}</strong>
+              <a
+                href={company.europeanPartner.website}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-bold text-white underline decoration-[#D4A017] underline-offset-4 hover:text-[#D4A017]"
+              >
+                {company.europeanPartner.name}
+              </a>
             </div>
             <span className="hidden sm:inline text-slate-600">|</span>
             <div>

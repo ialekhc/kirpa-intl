@@ -21,6 +21,7 @@ export const company: CompanyInfo = {
   website: 'https://official.kirpainternational.com',
   europeanPartner: {
     name: 'Global Work Specialist',
+    website: 'https://global-work-specialist.com/',
     partnershipRole: 'European Recruitment Partner',
     countries: ['Bulgaria', 'Greece', 'Romania'],
     tagline: 'Partnered for recruitment in Bulgaria, Greece & Romania',

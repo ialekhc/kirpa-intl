@@ -5,6 +5,7 @@ import { Metadata } from 'next';
 import { Globe, CheckCircle2, ArrowRight } from 'lucide-react';
 import { countries } from '@/data/countries';
 import { jobs } from '@/data/jobs';
+import { company } from '@/data/company';
 import { Container } from '@/components/ui/Container';
 import { SectionHeader } from '@/components/ui/SectionHeader';
 import { Breadcrumbs } from '@/components/layout/Breadcrumbs';
@@ -81,7 +82,15 @@ export default async function CountryDetailPage({
                 <Globe className="w-5 h-5 text-blue-300 shrink-0" />
                 <div>
                   <span className="text-slate-300 block">European Recruitment Partner:</span>
-                  <strong className="text-white font-bold">{country.partnerName}</strong>
+                  <a
+                    href={company.europeanPartner.website}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={`${country.partnerName} – European Recruitment Partner website`}
+                    className="font-bold text-white underline decoration-blue-300 underline-offset-4 hover:text-blue-200"
+                  >
+                    {country.partnerName}
+                  </a>
                 </div>
               </div>
             </div>

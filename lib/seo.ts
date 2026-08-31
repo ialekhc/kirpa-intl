@@ -23,6 +23,7 @@ export function getOrganizationSchema() {
     memberOf: {
       '@type': 'Organization',
       name: company.europeanPartner.name,
+      url: company.europeanPartner.website,
       role: company.europeanPartner.partnershipRole,
     },
   };
