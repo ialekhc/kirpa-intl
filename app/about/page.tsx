@@ -72,7 +72,7 @@ export default function AboutPage() {
                 eyebrow="Government Authorization"
                 title="Licensed & Fully Compliant"
               />
-              
+
               <p className="text-base text-[#4B5563] leading-relaxed">
                 Operating under Ministry of Labour, Employment and Social Security License No. <strong>{company.licenseNumber}</strong>, KIRPA INTERNATIONAL operates with strict adherence to the Department of Foreign Employment (DOFE), Nepal.
               </p>
