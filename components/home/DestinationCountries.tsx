@@ -14,7 +14,7 @@ export function DestinationCountries() {
         <SectionHeader
           eyebrow="Global Destinations"
           title="Where We Recruit"
-          description="Explore international employment destinations supported through KIRPA INTERNATIONAL and its European recruitment partner."
+          description="Explore international employment destinations supported through KIRPA INTERNATIONAL across Europe."
         />
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -43,16 +43,10 @@ export function DestinationCountries() {
                 {/* Content */}
                 <div className="p-6 space-y-4">
                   {/* Partner Attribution Badge */}
-                  <a
-                    href={company.europeanPartner.website}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label={`${country.partnerName} – European Recruitment Partner for ${country.name}`}
-                    className="inline-flex items-center gap-1.5 rounded border border-[#D4E4F7] bg-[#EBF3FA] px-2.5 py-1 text-xs font-semibold text-[#1E3A5F] transition-colors hover:border-[#0F3B68] hover:bg-[#DCEAF7]"
-                  >
+                  <div className="inline-flex items-center gap-1.5 rounded border border-[#D4E4F7] bg-[#EBF3FA] px-2.5 py-1 text-xs font-semibold text-[#1E3A5F]">
                     <Globe className="w-3.5 h-3.5" />
-                    <span>Partner: {country.partnerName}</span>
-                  </a>
+                    <span>Europe recruitment support</span>
+                  </div>
 
                   <p className="text-sm text-[#4B5563] leading-relaxed line-clamp-3">
                     {country.description}

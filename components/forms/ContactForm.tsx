@@ -129,7 +129,7 @@ export function ContactForm() {
           <option value="">Select inquiry topic...</option>
           <option value="Job Application Inquiry">Job Application Inquiry</option>
           <option value="Document Verification">Document Verification</option>
-          <option value="European Partnership">European Partnership (Global Work Specialist)</option>
+          <option value="European Partnership">European Recruitment Coordination</option>
           <option value="Employer Requirement">Employer Requirement</option>
           <option value="General Query">General Query</option>
         </select>

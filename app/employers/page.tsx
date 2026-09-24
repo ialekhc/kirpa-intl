@@ -18,7 +18,7 @@ export default function EmployersPage() {
     { title: 'Hardworking & Versatile', desc: 'Nepalese workers are globally recognized for dedication, adaptability, and high productivity.' },
     { title: 'Wide Skill Spectrum', desc: 'Sourcing capabilities spanning skilled trade technicians, manufacturing operators, and hospitality staff.' },
     { title: 'Cost-Effective Sourcing', desc: 'Streamlined recruitment management in full compliance with Nepalese and international labor laws.' },
-    { title: 'Strong European Track Record', desc: 'Proven partnership frameworks with Global Work Specialist for Romania, Bulgaria, and Greece.' },
+    { title: 'Strong European Track Record', desc: 'Proven recruitment frameworks supporting employer demand across Romania, Bulgaria, and Greece.' },
   ];
 
   return (
@@ -41,7 +41,7 @@ export default function EmployersPage() {
               </p>
               <div className="flex items-center gap-2 text-xs font-semibold text-[#D4A017] bg-[#1E3A5F] px-3.5 py-2 rounded-lg border border-[#2C4E78] w-fit">
                 <Globe className="w-4 h-4 text-blue-300" />
-                <span>European Recruitment Partner: {company.europeanPartner.name}</span>
+                <span>European Recruitment Coordination</span>
               </div>
             </div>
 
@@ -92,12 +92,12 @@ export default function EmployersPage() {
             <div className="flex items-center gap-3">
               <Globe className="w-8 h-8 text-[#D4A017] shrink-0" />
               <div>
-                <h3 className="text-2xl font-bold text-white">European Partner Network</h3>
-                <p className="text-xs text-blue-200">{company.europeanPartner.name} &bull; Romania, Bulgaria, Greece</p>
+                <h3 className="text-2xl font-bold text-white">European Recruitment Coordination</h3>
+                <p className="text-xs text-blue-200">Romania, Bulgaria, Greece</p>
               </div>
             </div>
             <p className="text-sm sm:text-base text-slate-200 leading-relaxed max-w-4xl">
-              For European employers operating in Romania, Bulgaria, and Greece, our joint partnership with Global Work Specialist facilitates seamless demand clearance, local visa embassy coordination, trade testing, and deployment logistics.
+              For European employers operating in Romania, Bulgaria, and Greece, our team facilitates demand clearance, local coordination, trade testing, and deployment logistics with full compliance and verified recruitment documentation.
             </p>
           </div>
         </Container>

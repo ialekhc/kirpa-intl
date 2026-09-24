@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     'Bulgaria recruitment Nepal',
     'Greece recruitment Nepal',
     'Romania recruitment Nepal',
-    'Global Work Specialist partner',
+    'European recruitment agency Nepal',
     'Foreign employment agency Nepal',
     'License 1847/082/083',
   ],
@@ -39,7 +39,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: `${company.name} | Foreign Employment Recruitment Company Nepal`,
     description:
-      'Licensed Nepal foreign employment recruitment company partnered with Global Work Specialist for recruitment in Romania, Bulgaria, and Greece.',
+      'Licensed Nepal foreign employment recruitment company coordinating verified job opportunities across Romania, Bulgaria, and Greece.',
     url: company.website,
     siteName: company.name,
     locale: 'en_US',

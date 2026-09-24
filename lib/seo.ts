@@ -20,12 +20,6 @@ export function getOrganizationSchema() {
       addressRegion: company.address.city,
       addressCountry: company.address.country,
     },
-    memberOf: {
-      '@type': 'Organization',
-      name: company.europeanPartner.name,
-      url: company.europeanPartner.website,
-      role: company.europeanPartner.partnershipRole,
-    },
   };
 }
 

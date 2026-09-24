@@ -94,7 +94,7 @@ export const recruitmentSteps: RecruitmentStep[] = [
     title: 'Post-Deployment Support',
     shortDescription: 'Continuous welfare check and ongoing liaison.',
     fullDescription:
-      'We coordinate with employers, European partners (such as Global Work Specialist), and diplomatic missions to monitor worker integration, safety, and contract compliance.',
+      'We coordinate with employers, recruitment partners, and diplomatic missions to monitor worker integration, safety, and contract compliance.',
     responsibleParty: 'KIRPA',
   },
 ];

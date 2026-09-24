@@ -7,15 +7,6 @@ export interface CompanyAddress {
   directionsUrl?: string;
 }
 
-export interface EuropeanPartner {
-  name: string;
-  website: string;
-  partnershipRole: string;
-  countries: string[];
-  tagline: string;
-  description: string;
-}
-
 export interface CompanyInfo {
   name: string;
   shortName: string;
@@ -27,6 +18,5 @@ export interface CompanyInfo {
   mobileRaw: string;
   email: string;
   website: string;
-  europeanPartner: EuropeanPartner;
   trustStatement: string;
 }

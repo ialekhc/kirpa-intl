@@ -38,7 +38,7 @@ export default function AboutPage() {
     },
     {
       title: 'Partnership',
-      description: 'Fostering collaborative relationships with certified global partners such as Global Work Specialist.',
+      description: 'Fostering collaborative relationships with certified international recruitment partners and employers.',
     },
   ];
 
@@ -162,47 +162,7 @@ export default function AboutPage() {
         </Container>
       </section>
 
-      {/* European Partnership Focus */}
-      <section id="partnership" className="py-16 bg-[#1E3A5F] text-white">
-        <Container size="wide">
-          <div className="max-w-4xl mx-auto text-center space-y-6">
-            <span className="text-xs font-bold uppercase tracking-wider text-blue-200 bg-white/10 px-3 py-1 rounded-md">
-              {company.europeanPartner.partnershipRole}
-            </span>
 
-            <h2 className="text-3xl sm:text-4xl font-black text-white">
-              International Strategic Partner:{' '}
-              <a
-                href={company.europeanPartner.website}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="underline decoration-[#D4A017] underline-offset-4 hover:text-blue-200"
-              >
-                {company.europeanPartner.name}
-              </a>
-            </h2>
-
-            <p className="text-base sm:text-lg text-slate-200 leading-relaxed">
-              {company.europeanPartner.description}
-            </p>
-
-            <div className="flex flex-col justify-center gap-3 pt-4 sm:flex-row">
-              <Button href="/countries" variant="primary" className="w-full sm:w-auto">
-                Explore Partner Countries
-                <ArrowRight className="w-4 h-4" />
-              </Button>
-              <Button
-                href="/contact"
-                variant="inverse"
-                className="w-full sm:w-auto"
-              >
-                <Mail className="w-4 h-4" />
-                Contact Our Recruitment Team
-              </Button>
-            </div>
-          </div>
-        </Container>
-      </section>
     </>
   );
 }

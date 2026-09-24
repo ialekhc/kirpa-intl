@@ -60,7 +60,7 @@ export function EmployersSection() {
                 </div>
                 <div>
                   <h4 className="text-lg font-bold text-white">European Employer Solutions</h4>
-                  <p className="text-xs text-slate-300">Coordinated in partnership with Global Work Specialist</p>
+                  <p className="text-xs text-slate-300">Coordinated through structured European recruitment support</p>
                 </div>
               </div>
 

@@ -1,7 +1,6 @@
 import { Hero } from '@/components/home/Hero';
 import { TrustStrip } from '@/components/home/TrustStrip';
 import { AboutSection } from '@/components/home/AboutSection';
-import { PartnershipSection } from '@/components/home/PartnershipSection';
 import { DestinationCountries } from '@/components/home/DestinationCountries';
 import { IndustriesGrid } from '@/components/home/IndustriesGrid';
 import { RecruitmentSteps } from '@/components/home/RecruitmentSteps';
@@ -18,7 +17,6 @@ export default function HomePage() {
       <Hero />
       <TrustStrip />
       <AboutSection />
-      <PartnershipSection />
       <DestinationCountries />
       <IndustriesGrid />
       <RecruitmentSteps />

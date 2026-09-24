@@ -28,7 +28,7 @@ export async function generateMetadata({
 
   return {
     title: `Recruitment Opportunities in ${country.name}`,
-    description: `Explore employment sectors, candidate preparation steps, and verified recruitment options for ${country.name} in partnership with Global Work Specialist.`,
+    description: `Explore employment sectors, candidate preparation steps, and verified recruitment options for ${country.name} across Europe.`,
   };
 }
 
@@ -61,7 +61,7 @@ export default async function CountryDetailPage({
               <div className="flex items-center gap-3">
                 <span className="text-4xl">{country.flag}</span>
                 <span className="text-xs font-bold uppercase tracking-wider text-[#93C5FD] bg-[#1E3A5F] px-3 py-1 rounded">
-                  Partner Country &bull; European Union
+                  High-Demand Employment Market
                 </span>
               </div>
 
@@ -72,23 +72,6 @@ export default async function CountryDetailPage({
               <p className="text-base sm:text-lg text-slate-300 leading-relaxed">
                 {country.description}
               </p>
-
-              {/* Partner Attribution Banner */}
-              <div className="bg-[#1E3A5F] border border-[#2C4E78] p-4 rounded-lg flex items-center gap-3 text-xs sm:text-sm">
-                <Globe className="w-5 h-5 text-blue-300 shrink-0" />
-                <div>
-                  <span className="text-slate-300 block">European Recruitment Partner:</span>
-                  <a
-                    href={company.europeanPartner.website}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label={`${country.partnerName} – European Recruitment Partner website`}
-                    className="font-bold text-white underline decoration-blue-300 underline-offset-4 hover:text-blue-200"
-                  >
-                    {country.partnerName}
-                  </a>
-                </div>
-              </div>
             </div>
 
             <div className="lg:col-span-5 relative">
@@ -169,7 +152,7 @@ export default async function CountryDetailPage({
               <div className="p-4 bg-[#FDEDEC] rounded-lg border border-[#FADBD8] text-xs text-[#791E1E] space-y-1">
                 <div className="font-bold">Legal Disclaimer:</div>
                 <div>
-                  KIRPA INTERNATIONAL and Global Work Specialist provide recruitment facilitation in full compliance with government rules. No guarantee of immigration status or visa issuance can be made prior to consular approval.
+                  KIRPA INTERNATIONAL provides recruitment facilitation in full compliance with government rules. No guarantee of immigration status or visa issuance can be made prior to consular approval.
                 </div>
               </div>
 

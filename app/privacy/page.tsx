@@ -23,7 +23,7 @@ export default function PrivacyPage() {
           <div className="space-y-4 text-sm text-[#4B5563] leading-relaxed">
             <h3 className="text-lg font-bold text-[#17202A]">1. Data Collection Principles</h3>
             <p>
-              {company.name} (License No. {company.licenseNumber}) respects candidate confidentiality. We collect personal information (including names, contact numbers, passports, CVs, and medical reports) solely for foreign employment verification, visa processing, and recruitment coordination with certified employers and partners (such as {company.europeanPartner.name}).
+              {company.name} (License No. {company.licenseNumber}) respects candidate confidentiality. We collect personal information (including names, contact numbers, passports, CVs, and medical reports) solely for foreign employment verification, visa processing, and recruitment coordination with certified employers and authorized recruitment partners.
             </p>
 
             <h3 className="text-lg font-bold text-[#17202A]">2. Information Disclosure</h3>

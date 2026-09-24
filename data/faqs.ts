@@ -16,9 +16,9 @@ export const faqs: FAQItem[] = [
   {
     id: 'faq-02',
     category: 'General',
-    question: 'What is the role of Global Work Specialist on this website?',
+    question: 'How does KIRPA coordinate European recruitment opportunities?',
     answer:
-      'Global Work Specialist is KIRPA INTERNATIONAL’s designated European Recruitment Partner for workforce sourcing and recruitment coordination in Romania, Bulgaria, and Greece.',
+      'KIRPA INTERNATIONAL coordinates verified recruitment opportunities for Romania, Bulgaria, and Greece through structured employer communication, document review, and compliance monitoring.',
   },
   {
     id: 'faq-03',

@@ -12,8 +12,6 @@ export interface DestinationCountry {
   code: string;
   heroImage: string;
   description: string;
-  partnerName: string;
-  partnerRole: string;
   keyIndustries: string[];
   employmentCategories: EmploymentCategory[];
   recruitmentOverview: string;

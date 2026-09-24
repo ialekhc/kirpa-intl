@@ -31,9 +31,9 @@ export default function TermsPage() {
               All published job listings represent authentic employer demand letters subject to pre-approval and final labor clearance by the Department of Foreign Employment (DOFE), Nepal. Published salary figures and contract durations reflect approved demand criteria.
             </p>
 
-            <h3 className="text-lg font-bold text-[#17202A]">3. European Partnership Context</h3>
+            <h3 className="text-lg font-bold text-[#17202A]">3. European Recruitment Context</h3>
             <p>
-              Recruitment coordination for Romania, Bulgaria, and Greece is conducted in official partnership with {company.europeanPartner.name}. Each party operates within its authorized jurisdiction and regulatory framework.
+              Recruitment coordination for Romania, Bulgaria, and Greece is carried out through authorized employer and recruitment channels under applicable local and international labor regulations. Each party operates within its authorized jurisdiction and regulatory framework.
             </p>
 
             <h3 className="text-lg font-bold text-[#17202A]">4. Anti-Fraud & Verification Notice</h3>

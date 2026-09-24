@@ -19,14 +19,5 @@ export const company: CompanyInfo = {
   mobileRaw: '+9779851451847',
   email: 'info@kirpainternational.com',
   website: 'https://www.kirpainternational.com',
-  europeanPartner: {
-    name: 'Global Work Specialist',
-    website: 'https://global-work-specialist.com/',
-    partnershipRole: 'European Recruitment Partner',
-    countries: ['Romania', 'Bulgaria', 'Greece'],
-    tagline: 'Partnered for recruitment in Romania, Bulgaria & Greece',
-    description:
-      'KIRPA INTERNATIONAL works in active recruitment partnership with Global Work Specialist to coordinate transparent workforce sourcing, verification, and deployment for employers in Romania, Bulgaria, and Greece.',
-  },
   trustStatement: 'Licensed Foreign Employment Recruitment Company in Nepal',
 };

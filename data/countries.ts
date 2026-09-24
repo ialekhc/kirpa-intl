@@ -11,9 +11,7 @@ export const countries = ([
     code: 'BG',
     heroImage: 'https://images.unsplash.com/photo-1584646098378-0874589d76b1?q=80&w=1200&auto=format&fit=crop',
     description:
-      'Bulgaria offers expanding employment avenues across manufacturing, hospitality, construction, and logistics sectors. KIRPA INTERNATIONAL coordinates recruitment for Bulgarian employers in partnership with Global Work Specialist.',
-    partnerName: 'Global Work Specialist',
-    partnerRole: 'European Recruitment Partner',
+      'Bulgaria offers expanding employment avenues across manufacturing, hospitality, construction, and logistics sectors. KIRPA INTERNATIONAL coordinates recruitment for Bulgarian employers through structured European recruitment channels.',
     keyIndustries: [
       'Hospitality & Tourism',
       'Manufacturing & Production',
@@ -55,7 +53,7 @@ export const countries = ([
       },
     ],
     recruitmentOverview:
-      'Recruitment for Bulgaria follows strict European Union labour regulations and Bulgarian Ministry of Labour approval protocols. Work permits and residence documentation are coordinated systematically between the employer, Global Work Specialist, and KIRPA INTERNATIONAL.',
+      'Recruitment for Bulgaria follows strict European Union labour regulations and Bulgarian Ministry of Labour approval protocols. Work permits and residence documentation are coordinated systematically between the employer and KIRPA INTERNATIONAL.',
     candidatePreparation: [
       'Valid passport with at least 2 years remaining validity',
       'Police clearance certificate (PCC) issued by Nepal Police',
@@ -67,7 +65,7 @@ export const countries = ([
       {
         question: 'Who handles recruitment coordination for Bulgaria?',
         answer:
-          'KIRPA INTERNATIONAL PVT. LTD. handles sourcing, screening, documentation, and government approvals in Nepal, working in official partnership with Global Work Specialist for Bulgarian employer requirements.',
+          'KIRPA INTERNATIONAL PVT. LTD. handles sourcing, screening, documentation, and government approvals in Nepal through structured recruitment coordination for Bulgarian employer requirements.',
       },
       {
         question: 'What documents are required for Bulgarian work permit processing?',
@@ -84,9 +82,7 @@ export const countries = ([
     code: 'GR',
     heroImage: 'https://images.unsplash.com/photo-1533105079780-92b9be482077?q=80&w=1200&auto=format&fit=crop',
     description:
-      'Greece presents opportunities in its world-leading hospitality, seasonal agriculture, food processing, and facility management industries. Sourcing is coordinated through Global Work Specialist.',
-    partnerName: 'Global Work Specialist',
-    partnerRole: 'European Recruitment Partner',
+      'Greece presents opportunities in its world-leading hospitality, seasonal agriculture, food processing, and facility management industries. Sourcing is coordinated through KIRPA INTERNATIONAL and verified European employer channels.',
     keyIndustries: [
       'Hospitality & Resort Services',
       'Tourism & Guest Relations',
@@ -156,9 +152,7 @@ export const countries = ([
     code: 'RO',
     heroImage: 'https://images.unsplash.com/photo-1584646098378-0874589d76b1?q=80&w=1200&auto=format&fit=crop',
     description:
-      'Romania is one of Europe’s rapidly growing industrial destinations, actively sourcing skilled and general workforce in construction, logistics, and manufacturing through KIRPA INTERNATIONAL and Global Work Specialist.',
-    partnerName: 'Global Work Specialist',
-    partnerRole: 'European Recruitment Partner',
+      'Romania is one of Europe’s rapidly growing industrial destinations, actively sourcing skilled and general workforce in construction, logistics, and manufacturing through KIRPA INTERNATIONAL and verified European employer networks.',
     keyIndustries: [
       'Manufacturing & Industrial Lines',
       'Construction & Building Infrastructure',
